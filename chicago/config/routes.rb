@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :places
+  root :to => redirect('/places')
 
-  # Put your routes here
+  resources :places do
+  	resources :reviews, :controller => :place_reviews, :only => [:create]
+  end
 
 end

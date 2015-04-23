@@ -1,0 +1,9 @@
+<% @place.reviews.order(:created_at).reverse.each do |review| %>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title"><%= stars review.rating %></h3>
+			<%= review.created_at.strftime('%c') %>
+		</div>
+		<div class="panel-body"><%= review.description %></div>
+	</div>
+<% end %>

@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423014029) do
+ActiveRecord::Schema.define(version: 20150423022807) do
 
-  create_table "places", force: true do |t|
-    t.string  "title",       null: false
-    t.text    "photo_url",   null: false
-    t.integer "price",       null: false
-    t.text    "description", null: false
+  create_table "place_reviews", force: :cascade do |t|
+    t.integer  "place_id",    null: false
+    t.integer  "rating",      null: false
+    t.text     "description", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string  "title",       limit: 255, null: false
+    t.text    "photo_url",               null: false
+    t.integer "price",                   null: false
+    t.text    "description",             null: false
   end
 
 end

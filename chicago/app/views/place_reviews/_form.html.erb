@@ -1,0 +1,12 @@
+<%= simple_form_for @place.reviews.build, :url => place_reviews_path(:place_id => @place.id) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<div class="place_review_rating_slider"><%= f.input :rating %></div>
+  	<%= f.input :description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
