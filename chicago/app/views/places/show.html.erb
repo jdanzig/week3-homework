@@ -1,0 +1,10 @@
+<div><strong><%= @place.title %></strong></div>
+
+<div>Admission Price: <%= number_to_currency(@place.price.to_f/100.0) %></div>
+<br>
+<%= image_tag @place.photo_url, :style => 'float: left;' %>
+<p><%= @place.description %></p>
+<br>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

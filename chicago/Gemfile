@@ -12,4 +12,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'quiet_assets'
-gem 'ez'
+# gem 'ez'
+gem 'simple_form'
+# used the command: rails g scaffold places
